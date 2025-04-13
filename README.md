@@ -12,9 +12,12 @@ static_website/
 │   ├── outputs.tf         
 │   └── provider.tf       
 └── web/                  # All website content
-    ├── static/
-    │   └── style.css     # CSS style
-    ├── templates/
-    │   └── index.html    # HTML for visualization
-    └──  app.py           # Main Flask app
+    ├── css/
+    │   └── style.css     
+    ├── js/
+    │   └── script.js   
+    └── templates/
+        ├── about.html 
+        ├── contact.html 
+        └── index.html    
 ```
