@@ -3,7 +3,7 @@ In process..
 ## Folders Structure:
 ```
 static_website/
-│── aws/                  # # AWS CLI scripts
+│── aws/                  # AWS CLI scripts
 │   ├── init.sh           
 │   └── policy.json       
 │── terraform/            # Infrastructure as Code (IaC)
