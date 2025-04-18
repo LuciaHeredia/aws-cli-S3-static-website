@@ -3,14 +3,14 @@ In process..
 ## Folders Structure:
 ```
 static_website/
-│── aws/                  # AWS CLI scripts
-│   ├── init.sh           
-│   └── policy.json       
 │── terraform/            # Infrastructure as Code (IaC)
-│   ├── main.tf           
-│   ├── variables.tf      
-│   ├── outputs.tf         
-│   └── provider.tf       
+│   ├── static-site-s3/   # Static site module
+│   │   ├──  s3.tf
+│   │   ├──  iam.tf
+│   │   ├──  variables.tf
+│   │   └──  outputs.tf   
+│   ├── terraform.tf      # Root terraform file
+│   └── terraform.tfvars  # Variables to be defined during runtime
 └── web/                  # All website content
     ├── css/
     │   └── style.css     
@@ -43,7 +43,7 @@ static_website/
     Default output format [None]:
     ```
 3. **AWS S3 Bucket**:
-- Enter the **Terraform** folder:
+- Enter to the **Terraform** folder:
     ```
     $ cd static_website/terraform
     ```
