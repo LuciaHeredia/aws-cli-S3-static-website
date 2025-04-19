@@ -7,13 +7,13 @@ static_website/
 │── aws/                  # AWS CLI scripts
 │   └── s3_upload.sh 
 │── terraform/            # Infrastructure as Code (IaC)
-│   ├── static-site-s3/   # Static site module
+│   ├── static-site-s3/   # Module
 │   │   ├──  s3.tf
-│   │   ├──  iam.tf
-│   │   ├──  variables.tf
-│   │   └──  outputs.tf   
+│   │   └──  variables.tf   
 │   ├── terraform.tf      # Root terraform file
-│   └── terraform.tfvars  # Variables to be defined automatically during runtime
+│   ├── terraform.tfvars  # Variables to be defined automatically during runtime
+│   ├── variables.tf
+│   └── outputs.tf      
 └── web/                  # All website content
     ├── css/
     │   └── style.css     
@@ -32,6 +32,7 @@ static_website/
 2. **AWS S3 Bucket** with **Terraform**:
     - Create the **S3 bucket** to host the static website.
     - Set appropriate permissions to allow public access to the files.
+    - Set a globally unique *bucket name* and *region* inside *.tfvars* file.
 3. **AWS S3 Bucket** with **AWS CLI** script:
     - Upload the static website files to the **S3 bucket**.
 ## How to use:
@@ -48,17 +49,18 @@ static_website/
         Default output format [None]:
         ```
 3. **AWS S3 Bucket** with **Terraform**:
-    - Enter to the **Terraform** folder:
+    - Go to the **Terraform** folder:
         ```
         $ cd static_website/terraform
         ```
-    - Initialize Terraform:
+    - Initialize and Plan **Terraform**:
         ```
         $ terraform init
+        $ terraform plan
         ```
-    - Run **terraform** files with a globally unique bucket name:
+    - Apply **Terraform**:
         ```
-        $ terraform apply -var="bucket_name=<my-static-site-bucket>"
+        $ terraform apply
         ```
     - (optional) To remove the **S3** module run:
         ```
@@ -68,6 +70,7 @@ static_website/
 4. **AWS S3 Bucket** with **AWS CLI** script:
     - Run **AWS CLI** script to upload the web files to the **S3 bucket**:
         ```
-        $ chmod +x aws/s3_upload.sh     # Give permission to execute
-        $ ./aws/s3_upload.sh            # run script
+        $ cd ..
+        $ chmod +x aws/s3_deploy.sh     # Give permission to execute
+        $ ./aws/s3_deploy.sh            # run script
         ```
