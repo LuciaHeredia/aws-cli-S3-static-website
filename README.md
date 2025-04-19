@@ -4,6 +4,8 @@ This project demonstrates how to host a fully static website on **Amazon S3**, u
 ## Folders Structure:
 ```
 static_website/
+│── aws/                  # AWS CLI scripts
+│   └── s3_upload.sh 
 │── terraform/            # Infrastructure as Code (IaC)
 │   ├── static-site-s3/   # Static site module
 │   │   ├──  s3.tf
@@ -42,7 +44,7 @@ static_website/
         ```
         AWS Access Key ID [None]: <accesskey>
         AWS Secret Access Key [None]: <secretkey>
-        Default region name [None]: <us-west-2>
+        Default region name [None]: <region>
         Default output format [None]:
         ```
 3. **AWS S3 Bucket** with **Terraform**:
