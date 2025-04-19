@@ -1,11 +1,3 @@
-variable "aws_region" {
-  type = string
-}
-
-variable "bucket_name" {
-  type = string
-}
-
 provider "aws" {
   region = var.aws_region
 }
