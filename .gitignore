@@ -1,2 +1,4 @@
 static_website/terraform/.terraform.lock.hcl
 static_website/terraform/.terraform/
+static_website/terraform/terraform.tfstate
+static_website/terraform/terraform.tfstate.backup
