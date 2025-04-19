@@ -55,5 +55,8 @@ static_website/
     ```
     $ terraform apply -var="bucket_name=<my-static-site-bucket>"
     ```
-
-    
+- (optional) To remove the **S3** module run:
+    ```
+    $ terraform state list | grep module
+    $ terraform state rm module.<module_name>
+    ```
