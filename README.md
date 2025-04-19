@@ -13,7 +13,7 @@ static_website/
 │   │   ├──  variables.tf
 │   │   └──  outputs.tf   
 │   ├── terraform.tf      # Root terraform file
-│   └── terraform.tfvars  # Variables to be defined during runtime
+│   └── terraform.tfvars  # Variables to be defined automatically during runtime
 └── web/                  # All website content
     ├── css/
     │   └── style.css     
